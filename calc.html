@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+<script>
+//Calc Functions
+function calcClear(){
+document.getElementById("inpt").value=""; 
+}
+function calcBksp(){
+var svalue=document.getElementById("inpt").value;
+var strlen=svalue.length;
+document.getElementById("inpt").value=svalue.substr(0,strlen-1);
+}
+//Operators Functions
+function addPlusMinus(){
+var svalue=document.getElementById("inpt").value;
+if(svalue.charAt(0)=='-'){
+document.getElementById("inpt").value="+"+svalue.substr(1);
+//alert(charAt(0)) ;
+}
+else
+if(svalue.charAt(0)=='+'){
+document.getElementById("inpt").value="-"+svalue.substr(1);
+//alert(charAt(0)) ;
+}
+else{
+document.getElementById("inpt").value="-"+svalue;
+//alert(charAt(0)) ;
+}}
+function addMinus(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+"-";
+document.getElementById("inpt").value=cvalue; 
+}
+function addPlus(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+"+";
+document.getElementById("inpt").value=cvalue; 
+}
+function addMinus(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+"-";
+document.getElementById("inpt").value=cvalue; 
+}
+function addTimes(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+"x";
+document.getElementById("inpt").value=cvalue; 
+}
+function addEqual(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+"=";
+document.getElementById("inpt").value=cvalue; 
+}
+//Operand Functions
+// A function to get one into the textfield
+function addZero(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("zr").value;
+document.getElementById("inpt").value=cvalue; 
+//alert(cvalue);
+}
+function addOne(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("on").value;
+document.getElementById("inpt").value=cvalue; 
+}
+function addTwo(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("sv").value;
+document.getElementById("inpt").value=cvalue; 
+}
+function addThree(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("th").value;
+document.getElementById("inpt").value=cvalue; 
+}
+function addFour(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("fr").value;
+document.getElementById("inpt").value=cvalue; 
+}
+function addFive(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("fv").value;
+document.getElementById("inpt").value=cvalue; 
+}
+function addSix(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("sx").value;
+document.getElementById("inpt").value=cvalue; 
+}
+function addSeven(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("sv").value;
+document.getElementById("inpt").value=cvalue; 
+}
+function addEight(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("et").value;
+document.getElementById("inpt").value=cvalue; 
+}
+function addNine(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("nn").value;
+document.getElementById("inpt").value=cvalue; 
+}
+//A function to evaluate the input
+function getResult(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue;
+document.getElementById("inpt").value=eval(cvalue); 
+}
+</script>
+</head>
+<body>
+<table border=1>
+<form name='calc' id='calc' style='width:100%'>
+<tr style='font-size:14px;background:darkblue;color:white'>
+<th colspan=3><table><tr >
+<th><label name=lbl1 id=lbl1>Calculator</label></th>
+</tr>
+</table>
+</th>
+<th><table><tr style='font-size:14px;'>
+<th><label name=lbl4 id=lbl4>&#2386</label></th>
+<th><label name=lbl4 id=lbl4>&box</label></th>
+<th><label name=lbl4 id=lbl4>&times</label></th>
+</tr>
+</table>
+</th>
+</tr>
+<tr>
+<th colspan=4><table><tr style='font-size:14px;'>
+<th><label name=lbl1 id=lbl1>Calculator</label></th>
+<th><label name=lbl2 id=lbl2>Edit</label></th>
+<th><label name=lbl3 id=lbl3>View</label></th>
+<th><label name=lbl4 id=lbl4>Help</label></th>
+</tr>
+</table>
+</th>
+</tr>
+<tr>
+<th colspan=4><input type=text name=inpt id=inpt style='width:95%'></th>
+</tr>
+<tr>
+<th><input type=button name=bksp id=bksp value='Bksp' onClick='calcBksp();'></th>
+<th><input type=button name=ce id=ce value='CE' ></th>
+<th><input type=button name=clr id=clr value='Clr' onClick='calcClear();'></th>
+<th><input type=button name=pm id=pm value='&plusmn' onClick='addPlusMinus();'></th>
+</tr>
+<tr>
+<th><input type=button name=sv id=sv value='7' onClick='addSeven();'></th>
+<th><input type=button name=et id=et value='8' onClick='addEight();'></th>
+<th><input type=button name=nn id=nn value='9' onClick='addNine();'></th>
+<th><input type=button name=dvd id=dvd value='&divide' ></th>
+</tr>
+<tr>
+<th><input type=button name=fr id=fr value='4' onClick='addFour();'></th>
+<th><input type=button name=fv id=fv value='5' onClick='addFive();'></th>
+<th><input type=button name=sx id=sx value='6' onClick='addSix();'></th>
+<th><input type=button name=mult id=mult value='&times' ></th>
+</tr>
+<tr>
+<th><input type=button name=on id=on value='1' onClick='addOne();'></th>
+<th><input type=button name=tw id=tw value='2' onClick='addTwo();'></th>
+<th><input type=button name=th id=th value='3' onClick='addThree();'></th>
+<th><input type=button name=minus id=minus value='&#150' ></th>
+</tr>
+<tr>
+<th><input type=button name=zr id=zr value='0' onClick='addZero();'></th>
+<th><input type=button name=dt id=dt value='.' onClick='addDot();'></th>
+<th><input type=button name=eq id=eq value='=' onClick='addEqual();'></th>
+<th><input type=button name=plus id=plus value='&#43' ></th>
+</tr>
+</form>
+</table>
+</body>
+</html>
